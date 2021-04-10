@@ -22,6 +22,11 @@ const schema = {
             },
             value: {
               type: 'number'
+            },
+            confidenceLevel: {
+              /** a number indicating the confidence of the user in his estimation. can either be [-1,0,1] or undefined/null (no required field) **/
+              type: ['number', 'string'],
+              format: 'confidenceLevel'
             }
           },
           required: ['storyId', 'value'],
@@ -95,7 +100,7 @@ function allValidUsersEstimated(room, matchingStory, userId) {
     // set our user's estimation manually for counting (the actual value does not matter)
     // our estimation might be already set from a previous "giveStoryEstimate" commands.
     // so you cannot just add +1 to the count!
-    [userId]: -1
+    [userId]: {value: -1}
   };
   const estimationCount = Object.values(estimations).length;
 
@@ -114,10 +119,10 @@ function allEstimationsSame(matchingStory, userId, ownEstimate) {
   const estimations = {
     ...matchingStory.estimations,
     // Add our user's estimation manually to the estimationMap (since event will be applied later)
-    [userId]: ownEstimate
+    [userId]: {value: ownEstimate}
   };
 
-  const estimationValues = Object.values(estimations);
+  const estimationValues = Object.values(estimations).map((estimation) => estimation.value);
   const firstValue = estimationValues[0];
 
   return estimationValues.every((est) => est === firstValue);

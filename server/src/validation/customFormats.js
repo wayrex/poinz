@@ -44,6 +44,7 @@ export function registerCustomFormats(tvi) {
   );
   tvi.addFormat('parseableNumber', parseableNumber);
   tvi.addFormat('cardConfig', cardConfigUniqueValue);
+  tvi.addFormat('confidenceLevel', confidenceLevel);
 }
 
 function validateStringFormat(formatRegex, errorMsg, data) {
@@ -74,11 +75,37 @@ function cardConfigUniqueValue(data) {
   }
 }
 
+/**
+ * tv4 format validation function: if falsy value returned, data matches the format -> valid.
+ * @param data
+ * @return {string} Returns a string with an error/info message if given data is not valid
+ */
 export function parseableNumber(data) {
-  if (!Number.isFinite(data)) {
-    const parsedValue = parseFloat(data);
-    if (isNaN(parsedValue)) {
-      return 'Given value is not parseable to a number';
-    }
+  if (Number.isFinite(data)) {
+    return; // all good, it's a number, neither "nan" nor +/- Infinity
   }
+
+  // maybe it's a string that is parseable to float.
+  const parsedValue = parseFloat(data);
+  if (isNaN(parsedValue)) {
+    return 'Given value is not parseable to a number';
+  }
+}
+
+/**
+ * tv4 format validation function: if falsy value returned, data matches the format -> valid.
+ * @param data
+ * @return {string} Returns a string with an error/info message if given data is not valid
+ */
+export function confidenceLevel(data) {
+  if (parseableNumber(data)) {
+    return 'Given value is is not a valid confidenceLevel (not a number / parseable to a number)';
+  }
+
+  const parsedValue = parseFloat(data);
+  if (parsedValue === 0 || parsedValue === -1 || parsedValue === 1) {
+    return;
+  }
+
+  return 'Given value is not a valid confidenceLevel';
 }

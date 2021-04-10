@@ -49,11 +49,13 @@ const revealCommandHandler = {
     });
 
     const matchingStory = getMatchingStoryOrThrow(room, command.payload.storyId);
-    const estimValues = Object.values(matchingStory.estimations);
-    if (allEstimationsSame(estimValues)) {
+    const estimationValues = Object.values(matchingStory.estimations).map(
+      (estimation) => estimation.value
+    );
+    if (allEstimationsSame(estimationValues)) {
       room.applyEvent('consensusAchieved', {
         storyId: command.payload.storyId,
-        value: estimValues[0]
+        value: estimationValues[0]
       });
     }
   }
@@ -64,7 +66,7 @@ function allEstimationsSame(estimationValues) {
     return false;
   }
   const firstValue = estimationValues[0];
-  return estimationValues.every((est) => est === firstValue);
+  return estimationValues.every((estimValue) => estimValue === firstValue);
 }
 
 export default revealCommandHandler;

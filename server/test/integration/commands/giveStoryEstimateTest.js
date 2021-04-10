@@ -29,7 +29,40 @@ test('Should produce storyEstimateGiven event', async () => {
 
   expect(room.stories.length).toBe(1);
   expect(room.stories[0].estimations).toEqual({
-    [userId]: 2
+    [userId]: {value: 2, confidenceLevel: 0}
+  });
+});
+
+test('Should produce storyEstimateGiven event (with confidenceLevel)', async () => {
+  const {roomId, storyId, userIdOne: userId, processor} = await prepTwoUsersInOneRoomWithOneStory();
+  const commandId = uuid();
+
+  const {producedEvents, room} = await processor(
+    {
+      id: commandId,
+      roomId: roomId,
+      name: 'giveStoryEstimate',
+      payload: {
+        storyId,
+        value: 2,
+        confidenceLevel: 1
+      }
+    },
+    userId
+  );
+
+  expect(producedEvents).toMatchEvents(commandId, roomId, 'storyEstimateGiven');
+
+  const [storyEstimateGivenEvent] = producedEvents;
+
+  expect(storyEstimateGivenEvent.userId).toEqual(userId);
+  expect(storyEstimateGivenEvent.payload.storyId).toEqual(storyId);
+  expect(storyEstimateGivenEvent.payload.value).toBe(2);
+  expect(storyEstimateGivenEvent.payload.confidenceLevel).toBe(1);
+
+  expect(room.stories.length).toBe(1);
+  expect(room.stories[0].estimations).toEqual({
+    [userId]: {value: 2, confidenceLevel: 1}
   });
 });
 
@@ -292,7 +325,7 @@ test('Should not produce revealed event if user changes his estimation', async (
   expect(storyEstimateGivenEvent.payload.value).toBe(2);
 
   expect(room.stories.length).toBe(1);
-  expect(room.stories[0].estimations[userId]).toBe(2);
+  expect(room.stories[0].estimations[userId]).toEqual({value: 2, confidenceLevel: 0});
 
   // -- now our user changes his mind and estimates 5 (same story of course)
   const {producedEvents: scndProducedEvents, room: roomAfterScndCommand} = await processor(
@@ -318,7 +351,10 @@ test('Should not produce revealed event if user changes his estimation', async (
 
   // estimated value is stored on story in room
   expect(roomAfterScndCommand.stories.length).toBe(1);
-  expect(roomAfterScndCommand.stories[0].estimations[userId]).toBe(5);
+  expect(roomAfterScndCommand.stories[0].estimations[userId]).toEqual({
+    value: 5,
+    confidenceLevel: 0
+  });
 });
 
 test('Should produce additional "revealed" and "consensusAchieved" events if all users estimated (only one user)', async () => {
@@ -359,7 +395,7 @@ test('Should produce additional "revealed" and "consensusAchieved" events if all
 
   expect(room.stories.length).toBe(1);
   expect(room.stories[0].estimations).toEqual({
-    [userId]: 2
+    [userId]: {value: 2, confidenceLevel: 0}
   });
 });
 

@@ -33,7 +33,7 @@ test('Should keep estimations on stories after user left', async () => {
 
   const estimatedValue = 3;
   mockRoomsStore.manipulate((room) => {
-    room.stories[0].estimations[userIdTwo] = estimatedValue;
+    room.stories[0].estimations[userIdTwo] = {value: estimatedValue, confidenceLevel: 0};
     return room;
   });
 
@@ -58,7 +58,10 @@ test('Should keep estimations on stories after user left', async () => {
 
   // but estimation on story is preserved
   expect(room.stories[0].id).toBe(storyId);
-  expect(room.stories[0].estimations[userIdTwo]).toBe(estimatedValue);
+  expect(room.stories[0].estimations[userIdTwo]).toEqual({
+    value: estimatedValue,
+    confidenceLevel: 0
+  });
 });
 
 test('Should produce connectionLost event', async () => {

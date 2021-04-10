@@ -58,7 +58,7 @@ const settleEstimationCommandHandler = {
 };
 
 function valueWasEstimatedByAtLeastOneUser(story, settledValue) {
-  const allEstimatedValues = Object.values(story.estimations);
+  const allEstimatedValues = Object.values(story.estimations).map((ev) => ev.value);
   return allEstimatedValues.includes(settledValue);
 }
 

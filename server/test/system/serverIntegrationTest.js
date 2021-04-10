@@ -227,7 +227,7 @@ describe('REST endpoint', () => {
         {
           consensus: 3,
           estimations: {
-            [userId]: 3
+            [userId]: {value: 3, confidenceLevel: 0}
           },
           id: storyAdded.payload.storyId,
           revealed: true,

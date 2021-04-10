@@ -8,7 +8,10 @@ const storyEstimateGivenEventHandler = (room, eventPayload, userId) => {
     ...story,
     estimations: {
       ...story.estimations,
-      [userId]: eventPayload.value
+      [userId]: {
+        value: eventPayload.value,
+        confidenceLevel: eventPayload.confidenceLevel ? eventPayload.confidenceLevel : 0
+      }
     }
   }));
 };

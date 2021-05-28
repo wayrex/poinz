@@ -21,8 +21,8 @@ const exampleRoom = {
       description: 's2 description',
       id: 'cda908b1-bbf9-4b04-8cf7-bf636c5cd8bd',
       estimations: {
-        '0afab6a7-2b26-4bbc-bb46-294ce255729c': {value:3,confidenceLevel:1},
-        '8d85c095-87bf-4e8f-9957-1e2b621f83de': {value:3,confidenceLevel:0}
+        '0afab6a7-2b26-4bbc-bb46-294ce255729c': {value: 3, confidenceLevel: 1},
+        '8d85c095-87bf-4e8f-9957-1e2b621f83de': {value: 3, confidenceLevel: 0}
       },
       createdAt: 1599237099010,
       revealed: true
@@ -32,8 +32,8 @@ const exampleRoom = {
       description: 's1 descr',
       id: 'a4ed287c-1cfd-49d4-b237-577b7190e76e',
       estimations: {
-        '0afab6a7-2b26-4bbc-bb46-294ce255729c': {value:13,confidenceLevel:-1},
-        '8d85c095-87bf-4e8f-9957-1e2b621f83de': {value:5,confidenceLevel:0}
+        '0afab6a7-2b26-4bbc-bb46-294ce255729c': {value: 13, confidenceLevel: -1},
+        '8d85c095-87bf-4e8f-9957-1e2b621f83de': {value: 5, confidenceLevel: 0}
       },
       createdAt: 1599237066010,
       revealed: true

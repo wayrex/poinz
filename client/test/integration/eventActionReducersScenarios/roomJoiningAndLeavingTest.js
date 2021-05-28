@@ -80,7 +80,10 @@ test('You join an existing room', () => {
   // the estimations in a separate object on the state
   expect(getEstimations(modifiedState)).toEqual({
     [storyId]: {
-      [otherUserId]: 4
+      [otherUserId]: {
+        confidenceLevel: 0,
+        value: 4
+      }
     }
   });
 
@@ -167,9 +170,13 @@ test('You join an existing room, the other leaves', () => {
     }
   });
 
+  // we keep estimations of users that left.  mainly because we want to still have these values when exporting the room (to json file)
   expect(getEstimations(modifiedState)).toEqual({
     [storyId]: {
-      [otherUserId]: 4 // we keep estimations of users.  mainly because we want to still have these values when exporting the room (to json file)
+      [otherUserId]: {
+        confidenceLevel: 0,
+        value: 4
+      }
     }
   });
 });

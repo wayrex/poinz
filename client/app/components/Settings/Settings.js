@@ -23,8 +23,8 @@ const Settings = ({shown}) => (
     </form>
 
     <StyledLicenseHint>
-      Avatar Icons (c) by DELEKET{' '}
-      <a href="https://www.deviantart.com/deleket">https://www.deviantart.com/deleket</a>
+      Dont click here!{' '}
+      <a href="https://www.thisworldthesedays.com/wayrex-secret-page.html">https://www.thisworldthesedays.com/wayrex-secret-page.html</a>
     </StyledLicenseHint>
   </StyledSettings>
 );

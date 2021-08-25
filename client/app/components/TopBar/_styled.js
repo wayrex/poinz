@@ -1,5 +1,5 @@
 import styled, {keyframes} from 'styled-components';
-import {COLOR_BACKGROUND_GREY, COLOR_BLUE, COLOR_PURPLE, COLOR_WARNING} from '../colors';
+import {COLOR_BACKGROUND_GREY, COLOR_BLUE, COLOR_PRIMARY, COLOR_WARNING} from '../colors';
 import {LEFT_MENU_WIDTH, device, TOPBAR_HEIGHT, ZuehlkeFont} from '../dimensions';
 import {StyledAvatar, StyledDropdown} from '../common/_styled';
 
@@ -26,7 +26,7 @@ export const StyledPoinzLogo = styled.div`
   font-family: ${ZuehlkeFont};
   font-size: 29px;
   padding-left: 8px;
-  color: ${COLOR_PURPLE};
+  color: ${COLOR_PRIMARY};
 `;
 
 export const StyledTopRight = styled.div`

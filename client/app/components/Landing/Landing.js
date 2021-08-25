@@ -5,18 +5,14 @@ import PropTypes from 'prop-types';
 import {L10nContext} from '../../services/l10n';
 import {getPendingJoinCommandId} from '../../state/commandTracking/commandTrackingSelectors';
 import {getActionLog} from '../../state/actionLog/actionLogSelectors';
-import appConfig from '../../services/appConfig';
 import JoinRoomForm from './JoinRoomForm';
-import GithubRibbon from './GithubRibbon';
 
 import {
   StyledActionLog,
   StyledEyecatcher,
   StyledLandingInner,
   StyledLanding,
-  StyledLoadingSpinner,
-  StyledInfoText,
-  StyledChangelog
+  StyledLoadingSpinner
 } from './_styled';
 
 /**
@@ -27,7 +23,6 @@ const Landing = ({waitingForJoin, actionLog}) => {
   if (waitingForJoin) {
     return (
       <StyledLanding>
-        <GithubRibbon />
         <StyledLandingInner>
           <Loader t={t} />
         </StyledLandingInner>
@@ -37,16 +32,8 @@ const Landing = ({waitingForJoin, actionLog}) => {
 
   return (
     <StyledLanding>
-      <GithubRibbon />
       <StyledLandingInner>
         <JoinRoomForm />
-
-        <StyledEyecatcher>
-          <StyledInfoText small={true}>
-            <i className="icon-attention"></i>
-            {t('disclaimer')}
-          </StyledInfoText>
-        </StyledEyecatcher>
 
         {actionLog && actionLog.length > 0 && (
           <StyledEyecatcher>
@@ -60,10 +47,6 @@ const Landing = ({waitingForJoin, actionLog}) => {
             </StyledActionLog>
           </StyledEyecatcher>
         )}
-
-        <StyledEyecatcher>
-          <StyledChangelog dangerouslySetInnerHTML={{__html: appConfig.changeLog}} />
-        </StyledEyecatcher>
       </StyledLandingInner>
     </StyledLanding>
   );

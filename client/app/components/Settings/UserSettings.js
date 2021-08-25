@@ -13,13 +13,12 @@ import {
   StyledArea,
   StyledAvatarGrid,
   StyledMiniAvatar,
-  StyledRadioButton,
   StyledSection,
   StyledTextInput
 } from './_styled';
 
 const UserSettings = ({user, setUsername, setEmail, setAvatar, toggleExcluded}) => {
-  const {t, language, setLanguage} = useContext(L10nContext);
+  const {t} = useContext(L10nContext);
   const {username, email, excluded} = user;
 
   // derive username for input field from prop
@@ -64,33 +63,6 @@ const UserSettings = ({user, setUsername, setEmail, setAvatar, toggleExcluded}) 
       </StyledSection>
 
       <StyledSection>
-        <h5>{t('language')}</h5>
-        <StyledRadioButton>
-          <label htmlFor="language-selector-en">
-            <input
-              type="radio"
-              id="language-selector-en"
-              name="language-selector"
-              defaultChecked={language === 'en'}
-              onClick={() => setLanguage('en')}
-            />
-            {t('english')}
-          </label>
-
-          <label htmlFor="language-selector-de">
-            <input
-              type="radio"
-              id="language-selector-de"
-              name="language-selector"
-              defaultChecked={language === 'de'}
-              onClick={() => setLanguage('de')}
-            />
-            {t('german')}
-          </label>
-        </StyledRadioButton>
-      </StyledSection>
-
-      <StyledSection>
         <h5>{t('avatar')}</h5>
         {t('avatarInfo')}
 
@@ -99,7 +71,7 @@ const UserSettings = ({user, setUsername, setEmail, setAvatar, toggleExcluded}) 
             <StyledMiniAvatar
               selected={user.avatar === index}
               src={aIcn}
-              key={'aIcn_' + aIcn}
+              key={'aIcn_' + aIcn + index}
               onClick={() => setAvatar(index)}
             />
           ))}

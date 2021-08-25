@@ -5,10 +5,10 @@
   "private": true,
   "author": "xeronimus@gmail.com",
   "license": "MIT",
-  "homepage": "https://github.com/Zuehlke/poinz",
+  "homepage": "https://github.com/wayrex/poinz",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Zuehlke/poinz.git"
+    "url": "https://github.com/wayrex/poinz.git"
   },
   "scripts": {
     "ft": "npm run format && npm t",
@@ -18,7 +18,8 @@
     "build": "node build/dockerImage.js",
     "dependencyCheck": "ncu --packageFile ./package.json > npm_dependencies_report.poinz.md && ncu --packageFile ./client/package.json > npm_dependencies_report.poinz-client.md && ncu --packageFile ./server/package.json > npm_dependencies_report.poinz-server.md ",
     "postinstall": "cd client/ && npm i && cd ../server && npm i",
-    "docu": "node docu/src/docuGenerator.js"
+    "docu": "node docu/src/docuGenerator.js",
+    "start": "cd client/ && npm run start"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",

@@ -69,7 +69,7 @@ async function build() {
   const gitInfo = await getGitInformation();
   await startBuildingDockerImage(gitInfo);
 
-  console.log('Done.\ndocker run  -e NODE_ENV=development -p 3000:3000 -d xeronimus/poinz');
+  console.log('Done.\ndocker run  -e NODE_ENV=development -p 3000:3000 -d wayrex/estimation');
 }
 
 /**
@@ -101,9 +101,9 @@ function startBuildingDockerImage(gitInfo) {
     } (git-tags: ${gitInfo.tags.join(' ')})`
   );
 
-  const user = process.env.DOCKER_USERNAME || 'xeronimus';
-  const userAndProject = `${user}/poinz`;
-  const tags = [`${userAndProject}:latest`, HEROKU_DEPLOYMENT_TAG];
+  const user = process.env.DOCKER_USERNAME || 'wayrex';
+  const userAndProject = `${user}/estimation`;
+  const tags = [`${userAndProject}:latest`];
   gitInfo.tags.forEach((gitTag) => tags.push(`${userAndProject}:${gitTag}`));
   const cmdArgs = `build ${tags.map((tg) => '-t ' + tg).join(' ')} .`;
 

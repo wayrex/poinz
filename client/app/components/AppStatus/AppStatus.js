@@ -44,7 +44,7 @@ const AppStatus = () => {
       <StyledTopBar data-testid="topBar">
         <StyledTopBarInner>
           <StyledTopLeft>
-            <StyledPoinzLogo>PoinZ</StyledPoinzLogo>
+            <StyledPoinzLogo>Estimation</StyledPoinzLogo>
           </StyledTopLeft>
 
           <StyledTopRight>

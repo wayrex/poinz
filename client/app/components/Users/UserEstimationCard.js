@@ -13,7 +13,7 @@ import {
  * or even a invisible placeholder for excluded users
  */
 const UserEstimationCard = ({isExcluded, userHasEstimation, revealed, matchingCardConfig}) => {
-  const estimationValueToDisplay = userHasEstimation && revealed ? matchingCardConfig.label : 'Z';
+  const estimationValueToDisplay = userHasEstimation && revealed ? matchingCardConfig.label : '-';
 
   if (isExcluded) {
     return (

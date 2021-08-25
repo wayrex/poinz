@@ -5,10 +5,10 @@
   "private": true,
   "author": "xeronimus@gmail.com",
   "license": "MIT",
-  "homepage": "https://github.com/Zuehlke/poinz",
+  "homepage": "https://github.com/wayrex/poinz",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Zuehlke/poinz.git"
+    "url": "https://github.com/wayrex/poinz.git"
   },
   "scripts": {
     "start": "npm run serve",

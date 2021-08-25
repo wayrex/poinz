@@ -16,14 +16,14 @@
 FROM node:lts-buster
 
 # Create app directory
-RUN mkdir -p /usr/src/poinz/public
-RUN mkdir -p /usr/src/poinz/lib
-WORKDIR /usr/src/poinz
+RUN mkdir -p /usr/src/estimation/public
+RUN mkdir -p /usr/src/estimation/lib
+WORKDIR /usr/src/estimation
 
 # Bundle app source
-COPY deploy/public /usr/src/poinz/public
-COPY deploy/lib /usr/src/poinz/lib
-COPY deploy/package.json /usr/src/poinz/
+COPY deploy/public /usr/src/estimation/public
+COPY deploy/lib /usr/src/estimation/lib
+COPY deploy/package.json /usr/src/estimation/
 
 # install app dependencies
 RUN npm install --production

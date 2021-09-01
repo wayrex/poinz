@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import {COLOR_FONT_GREY, COLOR_BACKGROUND_GREY, COLOR_BLUE, COLOR_LIGHTER_GREY} from '../colors';
+import {COLOR_FONT_GREY, COLOR_BACKGROUND_GREY, COLOR_LIGHTER_GREY} from '../colors';
 import {device, RIGHT_MENU_WIDTH, TOPBAR_HEIGHT} from '../dimensions';
 
 export const StyledRoom = styled.div`
@@ -68,32 +68,5 @@ export const StyledSidebarRight = styled.div`
     left: 0;
     position: absolute;
     bottom: 8px;
-  }
-`;
-
-export const StyledFeedbackHint = styled.div`
-  position: absolute;
-  border: 1px solid ${COLOR_BLUE};
-  background: #fff;
-  font-size: 13px;
-  margin-top: 28px;
-  display: flex;
-  bottom: 30px;
-  right: 20px;
-  width: 245px;
-  padding: 8px 20px 8px 8px;
-
-  img.avatar {
-    width: 40px;
-    height: 40px;
-    border-width: 1px;
-    box-sizing: border-box;
-    margin: 0 8px 0 0;
-  }
-
-  > i {
-    position: absolute;
-    top: 4px;
-    right: 4px;
   }
 `;

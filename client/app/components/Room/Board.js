@@ -2,8 +2,6 @@ import React from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 
-import Help from '../Help/Help';
-import FeedbackHint from './FeedbackHint';
 import Estimation from '../EstimationArea/EstimationArea';
 import Settings from '../Settings/Settings';
 import Users from '../Users/Users';
@@ -36,10 +34,7 @@ const Board = ({roomId, isAStorySelected, sidebarShown}) => (
     <StyledSidebarRight shown={sidebarShown}>
       <Settings />
       <ActionLog />
-      <Help />
     </StyledSidebarRight>
-
-    <FeedbackHint />
   </StyledBoard>
 );
 

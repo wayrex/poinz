@@ -7,7 +7,7 @@ import Dog_6 from './Dog_6.png';
 import Dog_7 from './Dog_7.png';
 import Dog_8 from './Dog_8.png';
 import Dog_9 from './Dog_9.png';
-import Dog_10 from './Dog_9.png';
+import Dog_10 from './Dog_10.png';
 import Dog_11 from './Dog_11.png';
 import Dog_12 from './Dog_12.png';
 import Dog_13 from './Dog_13.png';
@@ -18,6 +18,8 @@ import Dog_17 from './Dog_17.png';
 import Dog_18 from './Dog_18.png';
 import Dog_19 from './Dog_19.png';
 import Dog_20 from './Dog_20.png';
+import Dog_21 from './Dog_21.png';
+import Cat_1 from './Cat_1.png';
 
 export default [
   Dog_1,
@@ -40,4 +42,6 @@ export default [
   Dog_18,
   Dog_19,
   Dog_20,
+  Dog_21,
+  Cat_1,
 ];

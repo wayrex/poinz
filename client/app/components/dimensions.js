@@ -11,4 +11,4 @@ export const device = {
 };
 
 export const ZuehlkeFont =
-  '"aa_zuehlke_otpsregular", "Helvetica Neue", Helvetica, Arial, sans-serif';
+  '"october", "aa_zuehlke_otpsregular", "Helvetica Neue", Helvetica, Arial, sans-serif';

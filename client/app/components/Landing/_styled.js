@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import backgroundImage from '../../assets/landing_bg_z2020_wayrex.jpg';
+import backgroundImage from '../../assets/landing_bg_z2020_wayrex.gif';
 import {COLOR_FONT_GREY, COLOR_ORANGE} from '../colors';
 import {device} from '../dimensions';
 
@@ -13,7 +13,8 @@ export const StyledLanding = styled.div`
   left: 0;
   position: fixed !important;
   background: url(${backgroundImage}) no-repeat center center fixed;
-  background-size: cover;
+  background-size: 800px 600px;
+  background-color: #246dff;
 `;
 
 export const StyledLandingInner = styled.div`

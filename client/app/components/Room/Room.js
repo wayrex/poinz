@@ -3,8 +3,8 @@ import React from 'react';
 import Board from './Board';
 import TopBar from '../TopBar/TopBar';
 import RoomFooter from './RoomFooter';
+import Banner from '../Banner/Banner';
 import {StyledRoom} from './_styled';
-import web from '../../assets/web.png';
 
 /**
  * Is displayed as soon as the user joined a room.
@@ -15,7 +15,7 @@ const Room = () => (
     <TopBar />
     <Board />
     <RoomFooter />
-    <img className="profile-photo" src={web} style={{bottom: 0, width: '300px', left: '-10px', position: 'absolute', transform: 'rotate(270deg)'}}/>
+    <Banner/>
   </StyledRoom>
 );
 

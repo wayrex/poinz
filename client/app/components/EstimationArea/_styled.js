@@ -75,7 +75,7 @@ export const StyledCard = styled.button`
     text-align: center;
     height: 100px;
     box-sizing: border-box;
-    font-size: 28px;
+    font-size: 60px;
     padding: 8px;
     font-family: ${ZuehlkeFont};
   }
@@ -140,7 +140,7 @@ export const StyledEstmSummCardInner = styled(StyledCardInner)`
     right: 0px;
     width: 40%;
     height: 32%;
-    background: #ff820a;
+    background: #BB2528;
     border-radius: 0 9px 0 100%;
     font-size: 67%;
     padding: 2px 0 0 7px;

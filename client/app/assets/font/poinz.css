@@ -11,8 +11,17 @@
 }
 
 @font-face {
-  font-family: 'christmas';
-  src: url('../font/Christmas Squad.otf') format('OpenType');
+  font-family: 'got';
+  src: url('../font/Game of Thrones.ttf') format('OpenType');
+  font-weight: normal;
+  font-style: normal;
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'trajan';
+  src: url('../font/Trajan Pro.ttf') format('OpenType');
   font-weight: normal;
   font-style: normal;
   font-weight: normal;

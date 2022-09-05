@@ -61,7 +61,18 @@ module.exports = {
           }
         }
       },
-
+      {
+        test: /\.mp4$/,
+        use: [
+            {
+                loader: 'file-loader',
+                options: {
+                    name: '[name].[ext]',
+                    outputPath: 'video'
+                }
+            }
+        ]
+    },
       // file loader for directly imported Zühlke font (in _styled.js).
       // as of Aug2021 / css-loader 6.x does not use this loader -> no impact on fontello icon font "poinz"
       {

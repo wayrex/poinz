@@ -7,6 +7,7 @@ import 'purecss';
 import '../node_modules/purecss/build/grids-responsive-min.css';
 import './assets/font/poinz.css';
 import './assets/font/animation.css';
+import './assets/video.mp4';
 
 import appConfig from './services/appConfig';
 import initialState from './state/initialState';

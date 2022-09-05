@@ -11,6 +11,7 @@ import {StyledCard, StyledCardInner} from './_styled';
  * One estimation card on the board.
  */
 const Card = ({giveStoryEstimate, clearStoryEstimate, isWaiting, isSelected, cardCfg}) => {
+  console.log(cardCfg);
   return (
     <StyledCard onClick={onCardClick} data-testid={'estimationCard.' + cardCfg.value}>
       <StyledCardInner

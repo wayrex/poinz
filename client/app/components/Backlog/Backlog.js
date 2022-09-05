@@ -1,6 +1,7 @@
 import React, {useState, useContext} from 'react';
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
+import Banner from '../Banner/Banner';
 
 import {getActiveStories, getTrashedStories} from '../../state/stories/storiesSelectors';
 import {isBacklogShown} from '../../state/ui/uiSelectors';
@@ -37,6 +38,7 @@ const Backlog = ({backlogShown, trashedStoriesCount, activeStoriesCount}) => {
       {showTrash && <BacklogTrash />}
       {!showTrash && <StoryAddForm />}
       {!showTrash && <BacklogActive />}
+      <Banner/>
     </StyledBacklog>
   );
 };

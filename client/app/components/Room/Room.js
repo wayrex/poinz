@@ -3,7 +3,6 @@ import React from 'react';
 import Board from './Board';
 import TopBar from '../TopBar/TopBar';
 import RoomFooter from './RoomFooter';
-import Banner from '../Banner/Banner';
 import {StyledRoom} from './_styled';
 
 /**
@@ -15,7 +14,6 @@ const Room = () => (
     <TopBar />
     <Board />
     <RoomFooter />
-    <Banner/>
   </StyledRoom>
 );
 

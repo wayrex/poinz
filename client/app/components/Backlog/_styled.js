@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import {
-  COLOR_BACKGROUND_GREY,
+  COLOR_BACKGROUND_SECONDARY,
   COLOR_LIGHT_GREY,
   COLOR_LIGHTER_GREY,
   COLOR_ORANGE,
@@ -14,7 +14,7 @@ export const StyledBacklog = styled.div`
   box-sizing: border-box;
   width: 100%;
   padding: 8px 0 0 0;
-  background: ${COLOR_BACKGROUND_GREY};
+  background: ${COLOR_BACKGROUND_SECONDARY};
   flex-shrink: 0;
 
   display: ${({shown}) => (shown ? 'flex' : 'none')};

@@ -1,20 +1,9 @@
 import styled from 'styled-components';
-import backgroundImage from '../../assets/landing_bg_z2020_wayrex.gif';
+// import backgroundImage from '../../assets/landing_bg_z2020_wayrex.gif';
 import {COLOR_FONT_GREY, COLOR_ORANGE} from '../colors';
 import {device} from '../dimensions';
 
 export const StyledLanding = styled.div`
-  z-index: 1;
-  overflow: hidden;
-  overflow-y: auto;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  position: fixed !important;
-  background: url(${backgroundImage}) no-repeat center center fixed;
-  background-size: 800px 600px;
-  background-color: #246dff;
 `;
 
 export const StyledLandingInner = styled.div`
@@ -96,11 +85,11 @@ export const StyledEyecatcher = styled.div`
   width: 400px;
   max-width: 85%;
   background: rgba(0, 0, 0, 0.5);
-  color: #fff;
+  color: #f99955;
   padding: 18px 32px 32px 32px;
   border-radius: 2px;
   margin: 12px auto 0 auto;
-
+  font-family: 'trajan';F
   input {
     color: ${COLOR_FONT_GREY};
   }

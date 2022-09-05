@@ -128,7 +128,7 @@ export const StyledEstmSummCard = styled(StyledCard)`
 
 export const StyledEstmSummCardInner = styled(StyledCardInner)`
   height: 80px; /* slightly smaller cards in estimation summary */
-  padding: 23px 0;
+  padding: 13px 0;
 
   opacity: ${({wasEstimated}) => (wasEstimated ? 1 : 0.3)};
   border: ${({wasEstimated}) => (wasEstimated ? '2px solid ' + COLOR_ORANGE : '2px solid white')};

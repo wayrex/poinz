@@ -60,6 +60,7 @@ const Global = createGlobalStyle`
   }
 
   .pure-button {
+    color: white;
     border-radius: 2px;
 
     &.pure-button-primary {
